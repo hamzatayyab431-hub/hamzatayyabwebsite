@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamza Tayyab — Creative Systems Developer & CS Student</title>
+  <meta name="description" content="Professional portfolio of Hamza Tayyab, a Computer Science student at FAST-NUCES Lahore, specializing in systems programming, high-performance computing, and full-stack development.">
+  
+  <!-- Premium Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Dot Grid Background Backdrop -->
+  <div class="dot-grid-backdrop"></div>
+
+  <!-- Cinematic Film Grain Noise Overlay -->
+  <div class="global-noise-overlay"></div>
+
+  <!-- Floating Neo-Brutalist Theme Accent selector moved to header -->
+
+  <!-- Neo-Brutalist Snappy Preloader -->
+  <div class="cosmic-loader" id="cosmic-loader">
+    <div class="loader-content">
+      <h1 class="loader-title">HAMZA TAYYAB</h1>
+    </div>
+  </div>
+
+  <!-- Fixed Fullscreen Background Video (Active in all pages except Hero) -->
+  <div class="background-video-wrapper">
+    <video id="bg-video-others" class="bg-video" autoplay loop muted playsinline preload="auto">
+      <source src="others_bg.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Fixed HUD Header -->
+  <header class="hud-header">
+    <div class="hud-header-container">
+      <div class="hud-brand">
+        <a href="#hero" class="hud-logo">
+          <h1 class="hud-name">Hamza Tayyab</h1>
+          <span class="hud-subtitle">Creative Systems Developer & CS Student</span>
+        </a>
+      </div>
+      
+      <!-- Floating Neo-Brutalist Theme Accent selector inside header for perfect alignment -->
+      <div class="hud-spectrum-container">
+        <span class="hud-spectrum-title">ACCENT:</span>
+        <div class="hud-spectrum-options">
+          <button class="spectrum-bubble bubble-gold active" data-theme="gold" title="Amber">AMBER</button>
+          <button class="spectrum-bubble bubble-crimson" data-theme="crimson" title="Crimson">ROSE</button>
+          <button class="spectrum-bubble bubble-pulsar" data-theme="pulsar" title="Indigo">COPPER</button>
+          <button class="spectrum-bubble bubble-platinum" data-theme="platinum" title="Lavender">LAVENDER</button>
+        </div>
+      </div>
+
+      <nav class="hud-nav">
+        <ul>
+          <li><a href="#hero" class="nav-link active">Index</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#education" class="nav-link">Milestones</a></li>
+        </ul>
+      </nav>
+
+      <button class="hud-hamburger" id="hud-hamburger" aria-label="Toggle Menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Fixed HUD Footer -->
+  <footer class="hud-footer">
+    <div class="hud-location">
+      <span class="hud-dot"></span>
+      <span class="hud-location-text">Lahore, Pakistan</span>
+    </div>
+    <div class="hud-social">
+      <a href="https://github.com/hamzatayyab431-hub" target="_blank" class="hud-social-link">GitHub</a>
+      <span class="hud-separator">/</span>
+      <a href="https://www.linkedin.com/in/hamza-tayyab-1a74bb334" target="_blank" class="hud-social-link">LinkedIn</a>
+    </div>
+  </footer>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-indicator-orbit">
+    <svg class="orbit-svg" viewBox="0 0 100 100">
+      <circle class="orbit-track" cx="50" cy="50" r="45"></circle>
+      <circle class="orbit-progress" id="orbit-progress" cx="50" cy="50" r="45"></circle>
+    </svg>
+    <div class="orbit-text" id="orbit-text">01</div>
+  </div>
+
+  <!-- Snapping Resume Sections Container -->
+  <main id="main-content" class="sections-container">
+
+    <!-- Section 1: Hero / Introduction -->
+    <section id="hero" class="resume-section active-reveal">
+      <div class="section-content hero-layout-grid">
+        <div class="hero-text-side">
+          <span class="section-tag fade-up-item">BS COMPUTER SCIENCE STUDENT</span>
+          <h2 class="display-title font-display fade-up-item delay-100" data-asterisk="true">Hamza Tayyab</h2>
+          <p class="section-summary fade-up-item delay-200">
+            FAST-NUCES Lahore (4th Sem). Developing at the intersection of <span class="serif-accent filter-trigger" data-target="skills" data-filter="systems">low-level systems programming</span>, <span class="serif-accent filter-trigger" data-target="projects" data-filter="ml">machine learning</span>, and <span class="serif-accent filter-trigger" data-target="projects" data-filter="graphics">interactive graphics</span>. Building scalable and efficient digital architectures.
+          </p>
+        </div>
+        <div class="hero-split-line"></div>
+        <div class="hero-monitor-side fade-up-item delay-200">
+          <div class="hero-monitor-container">
+            <div class="monitor-toolbar">
+              <div class="monitor-dot dot-red"></div>
+              <div class="monitor-dot dot-yellow"></div>
+              <div class="monitor-dot dot-green"></div>
+              <span class="monitor-toolbar-title">sys://workstation.live</span>
+            </div>
+            <div id="monitor-drawer-console" class="monitor-drawer-console">
+              <div class="drawer-console-output" id="monitor-drawer-console-output"></div>
+            </div>
+            <div class="monitor-screen">
+              <video id="monitor-hero-video" class="monitor-video active" autoplay loop muted playsinline>
+                <source src="Programmer_typing_with_monitor_glow_202606092058.mp4" type="video/mp4">
+              </video>
+              <div id="monitor-console" class="monitor-console">
+                <div class="console-output" id="monitor-console-output"></div>
+              </div>
+              <div class="monitor-scanlines"></div>
+              <div class="monitor-vignette"></div>
+            </div>
+            <div class="monitor-status-bar">
+              <span class="monitor-status-dot"></span>
+              <span class="monitor-status-text">LIVE FEED — ACTIVE</span>
+              <button class="monitor-toggle-btn" id="monitor-toggle-feed">TOGGLE CONSOLE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Animated Scroll Indicator -->
+      <a href="#skills" class="hero-scroll-indicator">
+        <span class="scroll-indicator-text">SCROLL</span>
+        <div class="scroll-indicator-line"></div>
+      </a>
+    </section>
+
+    <!-- Section 2: Technical Skills (Highlight Core Expertise - HIGHLIGHTED AT THE TOP) -->
+    <section id="skills" class="resume-section">
+      <div class="section-content flex-center">
+        <div class="skills-layout-grid">
+          <div class="skills-text-side">
+            <span class="section-tag fade-up-item">01 / CORE EXPERTISE</span>
+            <h2 class="display-title font-display fade-up-item delay-100" style="font-size: clamp(3.6rem, 5.5vw, 7.5rem); margin-bottom: 2rem; line-height: 1.1;">Technical Matrix</h2>
+            <div class="skills-heading-separator"></div>
+            <div id="skills-inspector-wrapper" style="min-height: 150px; width: 100%; margin-bottom: 2.8rem; text-align: left;">
+              <p class="section-summary fade-up-item delay-200" id="skills-summary-default" style="max-width: 100%; margin: 0;">
+                Systems engineering, high-performance computing, and full-stack architecture. Hover over nodes in the interactive constellation network to map system connection pathways and expertise.
+              </p>
+              <div id="skills-inspector-content" class="inspector-panel" style="display: none;">
+                <div class="inspector-line"><span class="inspector-label">SYS://</span><span class="inspector-value val-name" id="inspect-name"></span></div>
+                <div class="inspector-line"><span class="inspector-label">LEVEL://</span><span class="inspector-value val-level" id="inspect-level"></span></div>
+                <div class="inspector-line"><span class="inspector-label">DEPLOY://</span><span class="inspector-value val-deploy" id="inspect-deploy"></span></div>
+                <div class="inspector-line"><span class="inspector-label">DESC://</span><span class="inspector-value val-desc" id="inspect-desc"></span></div>
+              </div>
+            </div>
+            <button class="project-action-btn fade-up-item delay-300" onclick="openDetails('skills-details')" style="margin-top: 0;">
+              <span>Verify Registry</span>
+              <div class="btn-arrow">→</div>
+            </button>
+          </div>
+          <div class="skills-map-side fade-up-item delay-200">
+            <!-- Interactive Skills Constellation -->
+            <div class="skills-constellation-container" style="margin-bottom: 0;">
+              <div class="constellation-corner-decorator"></div>
+              <svg class="skills-constellation-svg" id="skills-constellation" viewBox="0 0 500 380"></svg>
+              <div class="constellation-overlay" id="constellation-overlay">
+                <div class="constellation-overlay-title" id="constellation-title">Hover a Node</div>
+                <div class="constellation-overlay-desc" id="constellation-desc">Hover over a skill node to explore the systems engineering connection pathways.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Selected Projects (Highlighting all projects on a single responsive cards page) -->
+    <section id="projects" class="resume-section">
+      <div class="section-content flex-center" style="max-width: 1400px;">
+        <div class="section-tag-wrapper fade-up-item">
+          <span class="section-tag">02 / SELECTED PROJECTS</span>
+        </div>
+        <h2 class="display-title font-display fade-up-item delay-100" style="font-size: clamp(3.6rem, 5vw, 6.8rem); margin-top: 0; margin-bottom: 3.2rem;">Engineering Portfolio</h2>
+        
+        <div class="projects-deck-grid fade-up-item delay-200">
+          
+          <!-- Card 1: EcoTrack -->
+          <div class="project-deck-card" onclick="openDetails('ecotrack-details')">
+            <span class="card-tag">FULL-STACK</span>
+            <h4 class="card-title font-display">EcoTrack Platform</h4>
+            <p class="card-desc">Waste routing, logistics tracking, and NGO-focused cooperation platform using Node.js, JS, and secure SQL databases.</p>
+            <div class="card-action">
+              <span>Inspect Architecture</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Retro Car Arcade -->
+          <div class="project-deck-card" onclick="openDetails('retro-details')">
+            <span class="card-tag">x86 ASSEMBLY</span>
+            <h4 class="card-title font-display">Retro Car Game</h4>
+            <p class="card-desc">Three-lane racing arcade written from scratch in raw 16-bit Assembly with direct BIOS hardware rendering.</p>
+            <div class="card-action">
+              <span>Inspect Assembly</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </div>
+
+          <!-- Card 3: PakistanHub -->
+          <div class="project-deck-card" onclick="openDetails('pakistanhub-details')">
+            <span class="card-tag">C++ & SFML</span>
+            <h4 class="card-title font-display">PakistanHub</h4>
+            <p class="card-desc">A high-performance, localized social network desktop clone built from scratch in C++ and SFML with custom glassmorphism rendering.</p>
+            <div class="card-action">
+              <span>Inspect Application</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Space Shooter -->
+          <div class="project-deck-card" onclick="openDetails('space-details')">
+            <span class="card-tag">C++ & WINDOWS GDI</span>
+            <h4 class="card-title font-display">Space Shooter</h4>
+            <p class="card-desc">Classic 2D retro space shooter built in C++ that renders directly inside the Windows console client area using double-buffered GDI.</p>
+            <div class="card-action">
+              <span>Launch Game</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </div>
+
+          <!-- Card 5: CrimeMind NLP -->
+          <div class="project-deck-card" onclick="openDetails('crimemind-details')">
+            <span class="card-tag">NLP & DEEP LEARNING</span>
+            <h4 class="card-title font-display">CrimeMind NLP</h4>
+            <p class="card-desc">End-to-end NLP & machine learning pipeline deploying statistical baselines, BiLSTM networks, and fine-tuned DistilBERT transformers.</p>
+            <div class="card-action">
+              <span>Inspect Architecture</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </div>
+
+          <!-- Card 6: Auto Insurance Architecture -->
+          <div class="project-deck-card" onclick="openDetails('insurance-details')">
+            <span class="card-tag">DESIGN PATTERNS & OOAD</span>
+            <h4 class="card-title font-display">AUTO INSURANCE ARCHITECTURE</h4>
+            <p class="card-desc">A C++ system strictly enforcing SOLID principles and behavioral patterns. Utilizes dynamic runtime polymorphism for role actions, and decouples the Data Access Layer using template-driven functional callbacks to completely isolate file-handling invariants.</p>
+            <div class="card-action">
+              <span>INSPECT PATTERNS</span>
+              <span class="card-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Experience & Workflow -->
+    <section id="experience" class="resume-section">
+      <div class="section-content flex-center">
+        <span class="section-tag fade-up-item">03 / ENGAGEMENTS</span>
+        <div class="experience-badge-separator"></div>
+        <h2 class="display-title font-display fade-up-item delay-100">Workflow & Design</h2>
+        <p class="section-summary fade-up-item delay-200">
+          Low-level operating systems optimization, structural software architecture design, and commercial feasibility studies.
+        </p>
+        <div class="experience-preview-grid fade-up-item delay-250">
+          <!-- Card 1 -->
+          <div class="experience-preview-card">
+            <span class="preview-tag">COMPUTER SCIENCE</span>
+            <h4 class="preview-title">Operating Systems Optimization</h4>
+            <span class="preview-desc">FAST-NUCES</span>
+          </div>
+          <!-- Card 2 -->
+          <div class="experience-preview-card">
+            <span class="preview-tag">VERSION CONTROL</span>
+            <h4 class="preview-title">Git & Collaborative Workflows</h4>
+            <span class="preview-desc">GitHub Branch Orchestration & Release Pipelines</span>
+          </div>
+          <!-- Card 3 -->
+          <div class="experience-preview-card">
+            <span class="preview-tag">PROJECT</span>
+            <h4 class="preview-title">Full-Stack System Architectures</h4>
+            <span class="preview-desc">EcoTrack Waste Routing</span>
+          </div>
+        </div>
+        <button class="project-action-btn fade-up-item delay-300" onclick="openDetails('exp-details')">
+          <span>Verify Workflow</span>
+          <div class="btn-arrow">→</div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Section 8: Education & Honors -->
+    <section id="education" class="resume-section">
+      <div class="section-content flex-center">
+        <!-- Watermark behind heading -->
+        <div class="milestones-watermark">04</div>
+        <span class="section-tag fade-up-item">04 / MILESTONES</span>
+        <h2 class="display-title font-display fade-up-item delay-100">Professional Milestones</h2>
+        <p class="section-summary fade-up-item delay-200">
+          Academic foundation at FAST-NUCES, Beaconhouse schooling, certifications, and advanced hardware environment optimizations.
+        </p>
+        <div class="milestones-timeline fade-up-item delay-250">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content">
+              <h4 class="timeline-title">Enrolled at FAST-NUCES Lahore</h4>
+              <p class="timeline-detail">BS Computer Science core modules and operating systems research.</p>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-content">
+              <h4 class="timeline-title">Developed Systems & Graphics Engines</h4>
+              <p class="timeline-detail">Built custom C++ 2D arcade rendering pipelines and BIOS assembler racers.</p>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-content">
+              <h4 class="timeline-title">Beaconhouse Schooling Complete</h4>
+              <p class="timeline-detail">Graduated A-levels focusing on maths, computer science and physics.</p>
+            </div>
+          </div>
+        </div>
+        <button class="project-action-btn fade-up-item delay-300" onclick="openDetails('edu-details')">
+          <span>Open Registry</span>
+          <div class="btn-arrow">→</div>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Premium Drawer Detail Modals (Glassmorphic) -->
+  <div class="detail-drawer" id="ecotrack-details">
+    <div class="drawer-overlay" onclick="closeDetails()"></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" onclick="closeDetails()">✕</button>
+      <div class="drawer-header">
+        <span class="drawer-tag">FULL-STACK WASTE MANAGEMENT</span>
+        <h3 class="drawer-title font-display">EcoTrack Platform</h3>
+      </div>
+      <div class="drawer-body">
+        <div class="info-grid">
+          <div class="info-block">
+            <h4>Core Architecture</h4>
+            <p>Developed using Node.js and custom SQL databases, EcoTrack is a waste routing, tracking, and NGO-focused system. It solves logistics for waste collection and streamlines donor-NGO cooperation.</p>
+          </div>
+          <div class="info-block">
+            <h4>Tech Stack</h4>
+            <ul class="bullet-list">
+              <li>Node.js & Express</li>
+              <li>JavaScript & HTML5/CSS3</li>
+              <li>Relational DBMS (MySQL)</li>
+              <li>Git Version Control</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-drawer" id="retro-details">
+    <div class="drawer-overlay" onclick="closeDetails()"></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" onclick="closeDetails()">✕</button>
+      <div class="drawer-header">
+        <span class="drawer-tag">LOW-LEVEL SYSTEMS PROGRAMMING</span>
+        <h3 class="drawer-title font-display">Retro Car Arcade</h3>
+      </div>
+      <div class="drawer-body">
+        <div class="info-grid">
+          <div class="info-block">
+            <h4>Bare Metal Optimization</h4>
+            <p>A three-lane arcade racing game developed entirely in 16-bit x86 Assembly language. Runs in a DOS box emulator, rendering graphics directly via bios interrupts and manual pixel mapping.</p>
+          </div>
+          <div class="info-block">
+            <h4>Technical Feats</h4>
+            <ul class="bullet-list">
+              <li>Custom fuel and dynamic timer systems</li>
+              <li>Hardware-based keyboard interrupt listening</li>
+              <li>Double-buffered frame render logic in assembly</li>
+              <li>Zero dependencies; pure low-level logic</li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <h4>Live Assembly Engine</h4>
+            <div class="retro-terminal" id="retro-terminal">
+              <div class="terminal-header">
+                <span>IBM PC DOS Version 3.30</span>
+                <div class="terminal-indicator">
+                  <div class="terminal-dot"></div>
+                  <span>ONLINE</span>
+                </div>
+              </div>
+              <div class="terminal-body" id="terminal-body">
+                <div class="terminal-line">C:\>_</div>
+              </div>
+              <div class="terminal-input-row">
+                <span class="terminal-prompt">C:\></span>
+                <span class="terminal-cursor"></span>
+              </div>
+              <div class="terminal-chips">
+                <div class="terminal-chip" data-cmd="help">HELP</div>
+                <div class="terminal-chip" data-cmd="boot">BOOT GAME</div>
+                <div class="terminal-chip" data-cmd="view font">VIEW FONT</div>
+                <div class="terminal-chip" data-cmd="interrupts">LIST INTERRUPTS</div>
+                <div class="terminal-chip" data-cmd="clear">CLS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-drawer" id="insurance-details">
+    <div class="drawer-overlay" onclick="closeDetails()"></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" onclick="closeDetails()">✕</button>
+      <div class="drawer-header">
+        <span class="drawer-tag">DESIGN PATTERNS & OOAD</span>
+        <h3 class="drawer-title font-display">Auto Insurance Architecture</h3>
+      </div>
+      <div class="drawer-body">
+        <div class="info-grid">
+          
+          <div class="technical-spec-sheet">
+            <div><strong>[SPEC_ID://OOAD_ENFORCEMENT]</strong></div>
+            <div>PATTERN // TEMPLATE METHOD PIPELINE ACTIVE</div>
+            <div>COMPLIANCE // SOLID / LISKOV SUBSTITUTION / DRY</div>
+          </div>
+
+          <div class="info-block">
+            <h4>A. The Template Method Pattern via Functional Callbacks</h4>
+            <p><strong>The Code Evidence (<code>CsvHelper.h</code>):</strong> Your <code>readAll</code> method uses a generic template <code>T</code> paired with a lambda parser function: <code>std::function&lt;T(std::stringstream&amp;)&gt; parser</code>.</p>
+            <p style="margin-top: 1rem;"><strong>Design Principle Proof:</strong> This perfectly implements the <strong>Template Method</strong> behavior. The <em>invariant</em> steps (opening files, stream checks, line iteration loops) are fixed within <code>CsvHelper</code>. The <em>variant</em> steps (how a line becomes a <code>Staff</code>, <code>Customer</code>, or <code>Vehicle</code> object) are deferred and injected via custom lambdas. This cleanly achieves <strong>Open-Closed Principle (OCP)</strong> compliance—you can add infinitely many new models to your system without ever modifying the core file-parsing engine.</p>
+          </div>
+
+          <div class="info-block">
+            <h4>B. Interface-Driven Abstraction & Polymorphism</h4>
+            <p><strong>The Code Evidence (<code>Staff.h</code>):</strong> You designed a clean polymorphic hierarchy using an abstract base class (<code>Staff</code>) equipped with a pure virtual method <code>virtual std::string getRole() const = 0;</code> and a virtual default destructor.</p>
+            <p style="margin-top: 1rem;"><strong>Design Principle Proof:</strong> This satisfies the <strong>Liskov Substitution Principle (LSP)</strong> and <strong>Interface Segregation</strong>. By utilizing dynamic runtime binding through overrides (<code>Manager</code>, <code>Salesman</code>, <code>Surveyor</code>), high-level authentication services can interface entirely with the <code>Staff</code> abstraction without needing to couple themselves to concrete, low-level roles at compile time.</p>
+          </div>
+
+          <div class="info-block">
+            <h4>C. Strict Encapsulation & Serialization Layouts</h4>
+            <p><strong>The Code Evidence (<code>Staff.h</code>):</strong> Data members (<code>id</code>, <code>name</code>, <code>username</code>, <code>password</code>) are strictly hidden behind <code>protected</code> boundaries, exposed uniformly via constant reference getters (<code>const std::string&amp; getName() const</code>) to prevent accidental mutability or data leakage.</p>
+            <p style="margin-top: 1rem;"><strong>Design Principle Proof:</strong> It respects the <strong>Single Responsibility Principle (SRP)</strong> by making objects completely autonomous; the <code>serialize()</code> routine manages string conversion logic inside the entity block itself, maintaining structural encapsulation.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-drawer" id="pakistanhub-details">
+    <div class="drawer-overlay" onclick="closeDetails()"></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" onclick="closeDetails()">✕</button>
+      <div class="drawer-header">
+        <span class="drawer-tag">DESKTOP C++ DEVELOPMENT</span>
+        <h3 class="drawer-title font-display">PakistanHub 🇵🇰</h3>
+      </div>
+      <div class="drawer-body">
+        <div class="info-grid">
+          
+          <div class="technical-spec-sheet">
+            <div><strong>[SPEC_ID://PAKISTAN_HUB_SFML]</strong></div>
+            <div>GRAPHICS // SFML 2.5+ HARDWARE RENDER SYSTEM ACTIVE</div>
+            <div>THEME // NAVY DEEP (#0D1117) & PAKISTAN GREEN (#00A651)</div>
+          </div>
+
+          <div class="info-block">
+            <h4>Core Architecture</h4>
+            <p>PakistanHub is a localized, interactive social network clone built entirely in Object-Oriented C++17 on top of the Simple and Fast Multimedia Library (SFML 2.5+). It brings modern web-like design aesthetics, including custom glassmorphic rendering and smooth layout transitions, to a native desktop environment.</p>
+          </div>
+
+          <div class="info-block">
+            <h4>Key Features</h4>
+            <ul class="bullet-list">
+              <li><strong>Modern UI/UX:</strong> Translucent glassmorphism panels, rounded rectangles, and dynamic hover animations.</li>
+              <li><strong>Social Graph & Feed:</strong> Real-time follow/unfollow updates, localized search, timeline feeds, comments, and post likes.</li>
+              <li><strong>Complete Profile System:</strong> Registration, profile customizer (bio, city, custom cover, and avatar integrations).</li>
+              <li><strong>Local Data Persistence:</strong> File/CSV structured local database storage with robust transaction stream processing.</li>
+            </ul>
+          </div>
+
+          <div class="info-block">
+            <h4>Tech Stack Details</h4>
+            <ul class="bullet-list">
+              <li><strong>SFML 2.5+:</strong> Windowing system, hardware-accelerated 2D rendering, event handlers, and sound buffers.</li>
+              <li><strong>C++17 Standards:</strong> Strict object encapsulation, polymorphism, inheritance, and STL containers.</li>
+              <li><strong>Build System:</strong> GNU Make (`Makefile`) and MinGW compiler pipelines for optimal performance.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-drawer" id="space-details">
+    <div class="drawer-overlay" onclick="closeDetails()"></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" onclick="closeDetails()">✕</button>
+      <div class="drawer-header">
+        <span class="drawer-tag">C++ & WINDOWS GDI</span>
+        <h3 class="drawer-title font-display">Space Shooter</h3>
+      </div>
+      <div class="drawer-body">
+        <div class="info-grid">
+          
+          <div class="technical-spec-sheet">
+            <div><strong>[SPEC_ID://SPACE_SHOOTER_GDI]</strong></div>
+            <div>RENDERER // DOUBLE-BUFFERED WINDOWS GDI IN CONSOLE</div>
+            <div>PERSISTENCE // LOCAL HIGH SCORES (SCORES.TXT)</div>
+          </div>
+
+          <div class="info-block">
+            <h4>Core Architecture</h4>
+            <p>A classic 2D retro-style Space Shooter game built entirely in C++ that renders graphics directly inside the Windows console client area. By bypassing standard terminal text limits and utilizing Windows GDI (Graphics Device Interface), the project achieves smooth frame rates and double-buffered graphics inside a CLI environment.</p>
+          </div>
+
+          <div class="info-block">
+            <h4>Key Features</h4>
+            <ul class="bullet-list">
+              <li><strong>GDI Rendering:</strong> High-performance double-buffered GDI drawing inside the console window frame.</li>
+              <li><strong>Dynamic Waves & Enemies:</strong> Increasingly challenging waves, featuring fast Scouts (Red), armored Tanks (Orange), and flagship Boss battles (Magenta) with custom HP bars and spread-shot projectile attacks.</li>
+              <li><strong>Power-Up System:</strong> Real-time shield restoration, rapid-fire buffs, and triple-spread projectile patterns.</li>
+              <li><strong>Persistent Leaderboard:</strong> Local file-based high score tracking saved in `scores.txt`.</li>
+              <li><strong>Particle Visuals:</strong> Parallax starfields and particle-ring explosions.</li>
+            </ul>
+          </div>
+
+          <div class="info-block">
+            <h4>Controls & Compilation</h4>
+            <ul class="bullet-list">
+              <li><strong>Movement:</strong> Arrow keys. **Weapons:** Spacebar / Ctrl. **Pause:** Escape.</li>
+              <li><strong>Link libraries:</strong> Links natively against `-lgdi32 -luser32` Windows systems libraries.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-drawer" id="crimemind-details">
+    <div class="drawer-overlay" onclick="closeDetails()"></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" onclick="closeDetails()">✕</button>
+      <div class="drawer-header">
+        <span class="drawer-tag">NLP & DEEP LEARNING ARCHITECTURE</span>
+        <h3 class="drawer-title font-display">CrimeMind NLP</h3>
+      </div>
+      <div class="drawer-body">
+        <div class="info-grid">
+          <div class="info-block" style="grid-column: span 2">
+            <h4>Core Architecture</h4>
+            <p>Engineered an end-to-end machine learning and natural language processing pipeline in Python to classify crime narratives and detect deceptive text across three distinct architectural paradigms. Deployed a unified inference gateway capable of serving statistical, deep recurrent, and transformer-based models under strict resource constraints.</p>
+          </div>
+          <div class="info-block" style="grid-column: span 2">
+            <h4>Technologies Used</h4>
+            <div class="skill-pill-container" style="margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem;">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">PyTorch</span>
+              <span class="skill-pill">TensorFlow</span>
+              <span class="skill-pill">Hugging Face (DistilBERT)</span>
+              <span class="skill-pill">Scikit-Learn</span>
+              <span class="skill-pill">BiLSTM</span>
+              <span class="skill-pill">Flask API</span>
+              <span class="skill-pill">TF-IDF</span>
+              <span class="skill-pill">Git</span>
+            </div>
+          </div>
+          <div class="info-block" style="grid-column: span 2">
+            <h4>Core Contributions & Engineering Impact</h4>
+            <ul class="bullet-list">
+              <li><strong>Multi-Tier Modeling Pipeline:</strong> Developed and benchmarked a comparative NLP suite utilizing statistical baselines (TF-IDF with SVM/Random Forest ensembles), deep learning recurrent networks (BiLSTM with word embeddings to capture temporal sequences), and transformer architectures (fine-tuned DistilBERT utilizing bidirectional self-attention mechanisms).</li>
+              <li><strong>Unified Preprocessing Abstraction:</strong> Engineered a custom cross-framework abstraction layer in Python to dynamically map and route varying model preprocessing states (PyTorch tensors, NumPy arrays, attention masks, and tokenizers) to resolve active inference pipeline bottlenecks.</li>
+              <li><strong>API Routing & Memory Optimization:</strong> Deployed a lightweight Flask API inference gateway optimized with lazy-loading model initialization strategies and standardized execution scripts, successfully mitigating Out-Of-Memory (OOM) constraints during concurrent model serving.</li>
+              <li><strong>Data Synthesis & Pipeline Automation:</strong> Programmed automated text synthesis engines (<code>generate_data.py</code>/<code>generate_deception_data.py</code>) to systematically generate domain-specific statement variations, expanding data density and improving model validation benchmarks against sparse training sets.</li>
+              <li><strong>Optimization & Performance Evaluation:</strong> Navigated training bottlenecks (catastrophic forgetting and overfitting) by integrating dropout layers, early stopping, and linear warmup learning rate schedules, validating predictive threshold quality using Precision-Recall (PRC) and ROC-AUC curve plots.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-drawer" id="skills-details">
+    <div class="drawer-overlay" onclick="closeDetails()"></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" onclick="closeDetails()">✕</button>
+      <div class="drawer-header">
+        <span class="drawer-tag">SKILLS & COMPETENCIES</span>
+        <h3 class="drawer-title font-display">Technical Matrix</h3>
+      </div>
+      <div class="drawer-body">
+        <div class="matrix-grid">
+          <div class="matrix-category">
+            <h5>Programming & Systems Languages</h5>
+            <div class="skill-pill-container">
+              <span class="skill-pill">C</span>
+              <span class="skill-pill">C++</span>
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">x86 Assembly</span>
+              <span class="skill-pill">SQL</span>
+            </div>
+          </div>
+          <div class="matrix-category">
+            <h5>Web Architecture</h5>
+            <div class="skill-pill-container">
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">JavaScript (ES6+)</span>
+              <span class="skill-pill">HTML5 & CSS3</span>
+              <span class="skill-pill">CS50 Web Suite</span>
+              <span class="skill-pill">Flask API</span>
+            </div>
+          </div>
+          <div class="matrix-category">
+            <h5>Core Computer Science</h5>
+            <div class="skill-pill-container">
+              <span class="skill-pill">Data Structures & Algorithms (DSA)</span>
+              <span class="skill-pill">Object-Oriented Programming (OOP)</span>
+              <span class="skill-pill">Operating Systems (OS)</span>
+            </div>
+          </div>
+          <div class="matrix-category">
+            <h5>Frameworks & Intelligent Systems</h5>
+            <div class="skill-pill-container">
+              <span class="skill-pill">SFML Library</span>
+              <span class="skill-pill">Raylib Game Engine</span>
+              <span class="skill-pill">Scikit-learn (ML)</span>
+              <span class="skill-pill">Predictive Modeling</span>
+              <span class="skill-pill">PyTorch</span>
+              <span class="skill-pill">TensorFlow</span>
+              <span class="skill-pill">Hugging Face</span>
+              <span class="skill-pill">NLP & Deception Analysis</span>
+            </div>
+          </div>
+          <div class="matrix-category">
+            <h5>Systems Operations & DevOps</h5>
+            <div class="skill-pill-container">
+              <span class="skill-pill">Linux (Ubuntu)</span>
+              <span class="skill-pill">MySQL Engine</span>
+              <span class="skill-pill">Git / GitHub</span>
+              <span class="skill-pill">Dual-Boot Workstation Optimization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-drawer" id="exp-details">
+    <div class="drawer-overlay" onclick="closeDetails()"></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" onclick="closeDetails()">✕</button>
+      <div class="drawer-header">
+        <span class="drawer-tag">EXPERIENCE & LEADERSHIP</span>
+        <h3 class="drawer-title font-display">Workflow & Design</h3>
+      </div>
+      <div class="drawer-body">
+        <div class="info-grid">
+          <div class="info-block">
+            <h4>Systems & Architecture</h4>
+            <p style="margin-bottom: 1.6rem;">Deep-diving into low-level engineering, memory management, and system-level performance. Leveraging structural software patterns and rigorous process scheduling to build optimized, high-efficiency software architectures.</p>
+            <ul class="bullet-list">
+              <li>
+                <strong>Operating Systems:</strong> Implementation of core OS concepts, focusing on process synchronization, custom thread scheduling, and low-level memory allocation models.
+              </li>
+              <li>
+                <strong>Software Design & Analysis:</strong> Architecting robust, scalable software systems using foundational design patterns, rigorous complexity analysis, and structural design principles.
+              </li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <h4>Entrepreneurial Studies</h4>
+            <p>Conducted extensive market feasibility and financial planning research for sports facility setups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-drawer" id="edu-details">
+    <div class="drawer-overlay" onclick="closeDetails()"></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" onclick="closeDetails()">✕</button>
+      <div class="drawer-header">
+        <span class="drawer-tag">ACADEMIC & HARDWARE MATRIX</span>
+        <h3 class="drawer-title font-display">Cosmic Milestones</h3>
+      </div>
+      <div class="drawer-body">
+        <div class="info-grid">
+          <div class="info-block">
+            <h4>Formal Education</h4>
+            <ul class="milestone-list">
+              <li>
+                <strong>Bachelor of Science in Computer Science</strong>
+                <span>FAST-NUCES Lahore (4th Semester)</span>
+              </li>
+              <li>
+                <strong>Beaconhouse School System</strong>
+                <span>Advanced Levels (A-Levels) & Ordinary Levels (O-Levels)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <h4>Certifications & Lab Environment</h4>
+            <ul class="milestone-list">
+              <li>
+                <strong>CS50's Web Programming</strong>
+                <span>Currently enrolled via edX, developing web apps with Python & JS.</span>
+              </li>
+              <li>
+                <strong>Workstation Optimization</strong>
+                <span>Specialized in managing high-performance workstations (HP ZBook models) in optimized dual-boot Linux environments to speed up compilation times by 40%.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <h4>HP ZBook Workstation Telemetry</h4>
+            <div class="workstation-diagnostic-panel">
+              <div class="diagnostic-header">
+                <span class="diagnostic-title">Host: fast-nuces-workstation</span>
+                <div class="diagnostic-status">
+                  <span class="status-dot-pulse"></span>
+                  <span>LINUX RUNNING</span>
+                </div>
+              </div>
+              <div class="diagnostic-grid">
+                <div class="diagnostic-card">
+                  <h6>Compiler Yield</h6>
+                  <div class="stat-value-container">
+                    <span class="stat-num" id="stat-compile">42.5</span>
+                    <span class="stat-unit">KLOC/s</span>
+                  </div>
+                  <div class="stat-progress-container">
+                    <div class="stat-progress-bar" id="compile-progress" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div class="diagnostic-card">
+                  <h6>Core Temperature</h6>
+                  <div class="stat-value-container">
+                    <span class="stat-num" id="stat-temp">48</span>
+                    <span class="stat-unit">°C</span>
+                  </div>
+                  <div class="stat-progress-container">
+                    <div class="stat-progress-bar" id="temp-progress" style="width: 48%; background: linear-gradient(90deg, #00f3ff, #ff2a5f);"></div>
+                  </div>
+                </div>
+                <div class="diagnostic-card" style="grid-column: span 2">
+                  <h6>System Memory Yield (GCC Buffer Allocation)</h6>
+                  <div class="stat-value-container">
+                    <span class="stat-num" id="stat-mem">3.12</span>
+                    <span class="stat-unit">GB / 32 GB</span>
+                  </div>
+                  <div class="stat-progress-container">
+                    <div class="stat-progress-bar" id="mem-progress" style="width: 10%"></div>
+                  </div>
+                </div>
+                <div class="diagnostic-card" style="grid-column: span 2">
+                  <h6>Thread Vector Core Scheduler Load (16 Cores)</h6>
+                  <div class="thread-vis" id="thread-vis">
+                    <!-- 16 threads dynamic -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Scripts -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
