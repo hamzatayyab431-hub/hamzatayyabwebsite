@@ -2401,15 +2401,16 @@ button[type="submit"],
     background: var(--color-bg);
     border-left: var(--border-thick);
     z-index: 99;
-    padding: 10rem 3rem 4rem;
+    padding: 8rem 3rem 4rem; /* Reduced top padding to shift menu content up */
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 4rem;
+    gap: 3rem; /* Reduced gap between links */
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: -10px 0 0 rgba(0, 0, 0, 1);
     pointer-events: auto;
+    overflow-y: auto !important; /* Enables scrolling inside drawer if needed */
   }
 
   .hud-nav.active {
@@ -2441,7 +2442,7 @@ button[type="submit"],
     position: static !important;
     transform: none !important;
     width: 100%;
-    margin-top: auto;
+    margin-top: 2rem !important; /* Move it up directly under the navigation links */
     box-shadow: var(--shadow-flat-sm);
     justify-content: space-between;
   }
