@@ -467,6 +467,7 @@ body {
   background: var(--color-bg);
   border: var(--border-medium);
   box-shadow: var(--shadow-flat-sm);
+  transition: opacity 0.3s ease;
 }
 
 .orbit-svg {
@@ -2441,9 +2442,31 @@ button[type="submit"],
     position: static !important;
     transform: none !important;
     width: 100%;
-    margin-top: 2rem !important; /* Move it up directly under the navigation links */
+    margin-top: 2rem !important;
     box-shadow: var(--shadow-flat-sm);
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
+  .hud-nav .hud-spectrum-options {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  .hud-nav .spectrum-bubble {
+    flex: 1 1 calc(50% - 0.4rem);
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  /* Fade out scroll progress indicator when mobile menu is open */
+  body.nav-open .scroll-indicator-orbit {
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
   
   /* Prevent scrolling on body when mobile nav open */
@@ -2642,6 +2665,258 @@ button[type="submit"],
     box-shadow: var(--shadow-flat-sm) !important;
   }
 }
+
+/* ====================================================
+   Contact Section / Communication Socket
+   ==================================================== */
+#contact.resume-section {
+  padding-top: calc(7.2rem + 8.0rem) !important;
+  padding-bottom: 8.0rem !important;
+  height: auto !important;
+  min-height: 100vh;
+  position: relative;
+}
+
+#contact .section-tag {
+  margin-top: 0 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+#contact .display-title {
+  margin-top: 0 !important;
+  margin-bottom: 2.0rem !important;
+  text-align: left !important;
+}
+
+#contact .section-summary {
+  max-width: 100%;
+  margin: 0 0 3.2rem 0 !important;
+  text-align: left !important;
+  font-size: 1.6rem !important;
+  line-height: 1.75 !important;
+  color: color-mix(in srgb, var(--color-ink) 80%, transparent) !important;
+}
+
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4.8rem;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+  align-items: start;
+}
+
+/* Left side coordinates panel */
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
+}
+
+.contact-watermark {
+  left: -2rem !important;
+  top: 10rem !important;
+  transform: none !important;
+  position: absolute !important;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 1.2rem;
+  margin-bottom: 2.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 1.55rem;
+  line-height: 1.5;
+}
+
+.info-label {
+  font-weight: 800;
+  min-width: 90px;
+  color: color-mix(in srgb, var(--color-ink) 50%, transparent);
+}
+
+.info-value {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.contact-link {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.15s ease;
+}
+
+.contact-link:hover {
+  color: var(--accent-color);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  width: fit-content;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+/* Feedback message box */
+.contact-feedback-box {
+  margin-top: 2.4rem;
+  padding: 1.6rem;
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  border-radius: 4px;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-feedback-box.hidden {
+  display: none !important;
+}
+
+.contact-feedback-box.success-state {
+  border: var(--border-medium);
+  background: color-mix(in srgb, var(--accent-color) 8%, var(--color-paper-white));
+  color: var(--color-ink);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-flat-sm);
+}
+
+.contact-feedback-box.error-state {
+  border: var(--border-medium);
+  background: #ffebe6;
+  color: #de350b;
+  border-color: #de350b;
+  box-shadow: var(--shadow-flat-sm);
+}
+
+/* Right side form card */
+.contact-form-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2.0rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+.form-label {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--color-ink);
+}
+
+.required-star {
+  color: #ff2a5f;
+  margin-left: 0.2rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  border: var(--border-thin);
+  background: var(--color-paper-white);
+  padding: 1.2rem 1.6rem;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: var(--color-ink);
+  border-radius: 2px;
+  transition: outline 0.15s ease, border-color 0.15s ease;
+  min-height: 44px; /* Touch targets min 44px tall */
+  outline: none;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: 3px solid var(--accent-color);
+  border-color: var(--color-ink);
+}
+
+/* Visual invalid feedback */
+.form-input:invalid:not(:placeholder-shown),
+.form-textarea:invalid:not(:placeholder-shown) {
+  border-color: #ff2a5f;
+  outline: 3px solid rgba(255, 42, 95, 0.25);
+}
+
+.submit-btn {
+  margin-top: 1.2rem;
+  align-self: flex-start;
+  width: 100% !important;
+  max-width: 280px;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: var(--shadow-flat-sm) !important;
+  border-color: var(--color-ink) !important;
+}
+
+.botcheck-hidden {
+  display: none !important;
+}
+
+/* Tablet responsiveness: stack contact sections */
+@media (max-width: 1024px) {
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+    padding: 0 2rem;
+  }
+  
+  .submit-btn {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-layout-grid {
+    padding: 0 1rem;
+  }
+}
+
 
 
 

@@ -899,6 +899,91 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --------------------------------------------------
+  // 9. Contact Form Submission & Web3Forms AJAX
+  // --------------------------------------------------
+  const contactForm = document.getElementById('contact-form');
+  const contactSubmitBtn = document.getElementById('contact-submit-btn');
+  const contactFeedback = document.getElementById('contact-feedback');
+
+  if (contactForm && contactSubmitBtn && contactFeedback) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Check honeypot field
+      const botcheck = contactForm.querySelector('input[name="botcheck"]');
+      if (botcheck && botcheck.checked) {
+        contactFeedback.textContent = 'Spam bot detected. Submission aborted.';
+        contactFeedback.className = 'contact-feedback-box error-state';
+        contactFeedback.classList.remove('hidden');
+        return;
+      }
+
+      // Check form validity using native constraint API
+      if (!contactForm.checkValidity()) {
+        contactFeedback.textContent = 'Validation error: Please correct the marked fields before transmitting.';
+        contactFeedback.className = 'contact-feedback-box error-state';
+        contactFeedback.classList.remove('hidden');
+
+        // Trigger native browser styling updates
+        contactForm.reportValidity();
+        return;
+      }
+
+      // Start Sending State
+      contactSubmitBtn.disabled = true;
+      const submitTextSpan = contactSubmitBtn.querySelector('span');
+      const originalBtnText = submitTextSpan ? submitTextSpan.textContent : 'SEND MESSAGE';
+      if (submitTextSpan) {
+        submitTextSpan.textContent = 'TRANSMITTING...';
+      }
+
+      contactFeedback.textContent = 'Connecting to socket and transmitting payload...';
+      contactFeedback.className = 'contact-feedback-box success-state';
+      contactFeedback.classList.remove('hidden');
+
+      const formData = new FormData(contactForm);
+      const json = JSON.stringify(Object.fromEntries(formData));
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+      .then(async (response) => {
+        let result = await response.json();
+        if (response.status === 200 && result.success) {
+          // Success State
+          contactFeedback.textContent = 'Transmission received successfully. Thank you for your message!';
+          contactFeedback.className = 'contact-feedback-box success-state';
+          
+          // Clear all form fields
+          contactForm.reset();
+        } else {
+          // API Failure State
+          const errorMsg = result.message || 'API rejected submission.';
+          contactFeedback.textContent = `Transmission failed: ${errorMsg} (Status ${response.status})`;
+          contactFeedback.className = 'contact-feedback-box error-state';
+        }
+      })
+      .catch((error) => {
+        // Network/DNS Error State
+        contactFeedback.textContent = `Transmission failed: ${error.message || 'Network timeout.'} Please check your connection.`;
+        contactFeedback.className = 'contact-feedback-box error-state';
+      })
+      .finally(() => {
+        // Reset button states
+        contactSubmitBtn.disabled = false;
+        if (submitTextSpan) {
+          submitTextSpan.textContent = originalBtnText;
+        }
+      });
+    });
+  }
+
 });
 
 // --------------------------------------------------
