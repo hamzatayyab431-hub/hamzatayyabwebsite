@@ -122,10 +122,9 @@ body {
   padding: 0.6rem 1.2rem;
   box-shadow: var(--shadow-flat-sm);
   
-  /* Center exactly relative to header layout */
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Centered flow position (prevents overlap on smaller desktop/laptop screens) */
+  position: relative;
+  margin: 0 auto;
 }
 
 .hud-spectrum-title {
