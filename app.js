@@ -4,6 +4,10 @@
    Optimized with hardware-accelerated background video cross-fades
 ------------------------------------------------------- */
 
+// Initialize Vercel Web Analytics
+import { inject } from '@vercel/analytics';
+inject();
+
 document.addEventListener('DOMContentLoaded', () => {
   
   // 1. Initialize Words Pull-Up text splitting
